@@ -62,3 +62,37 @@ def listarDocentes(request):
     return render(request, 'listarDocentes.html',{
         'docentes' : docentes
     })
+
+def crearCurso(request):
+    formulario = FormCurso()
+    return render(request, 'crearCurso.html', {
+        'form':formulario
+    })
+
+def listarCursos(request):
+    cursos = Curso.objects.all()
+    return render(request, 'listarCursos.html', {
+        'cursos':cursos
+    })
+
+def guardarCurso(request):
+    codigo = request.POST['codigo']
+    nombre = request.POST['nombre']
+    horas = request.POST['horas']
+    creditos = request.POST['creditos']
+    estado = request.POST['estado']
+
+    curso = Curso(
+        codigo = codigo,
+        nombre = nombre,
+        horas = horas,
+        creditos = creditos,
+        estado = estado
+    )
+    curso.save()
+    return redirect('listarCursos')
+
+def eliminarCurso(request, id):
+    curso = Curso.objects.get(pk=id)
+    curso.delete()
+    return redirect('listarCursos')

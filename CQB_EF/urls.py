@@ -24,8 +24,10 @@ urlpatterns = [
     path("integrantes/", views.integrantes, name="integrantes"),
     path("crearDocente/", views.crearDocente, name="crearDocente"),
     path("listarDocentes/", views.listarDocentes, name="listarDocentes"),
-    path("crearCurso/", views.crearCurso, name="crearCurso"),
-    path("listarCursos/", views.listarCursos, name="listarCursos"),
     path("guardarDocente/", views.guardarDocente, name="guardarDocente"),
     path("eliminarDocente/<int:id>", views.eliminarDocente, name="eliminarDocente"),
+    path("crearCurso/", views.crearCurso, name="crearCurso"),
+    path("listarCursos/", views.listarCursos, name="listarCursos"),
+    path("guardarCurso/", views.guardarCurso, name="guardarCurso"),
+    path("eliminarCurso/<int:id>", views.eliminarCurso, name="eliminarCurso"),
 ]
