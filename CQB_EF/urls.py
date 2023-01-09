@@ -26,4 +26,6 @@ urlpatterns = [
     path("listarDocentes/", views.listarDocentes, name="listarDocentes"),
     path("crearCurso/", views.crearCurso, name="crearCurso"),
     path("listarCursos/", views.listarCursos, name="listarCursos"),
+    path("guardarDocente/", views.guardarDocente, name="guardarDocente"),
+    path("eliminarDocente/<int:id>", views.eliminarDocente, name="eliminarDocente"),
 ]
